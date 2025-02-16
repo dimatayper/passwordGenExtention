@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Генератор паролей</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Вкладки -->
+    <div class="tabs">
+      <button id="tab-generator" class="tab-button active">Генератор</button>
+      <button id="tab-history" class="tab-button">История</button>
+    </div>
+
+    <!-- Вкладка генератора -->
+    <div id="generator-tab" class="tab-content active">
+      <h1>Генератор паролей</h1>
+
+      <!-- Настройки длины пароля -->
+      <div class="setting">
+        <label for="length">Длина пароля: <span id="length-value">12</span></label>
+        <input type="range" id="length" min="4" max="50" value="12">
+      </div>
+
+      <!-- Настройки сложности -->
+      <div class="setting">
+        <label for="uppercase" class="checkbox-label">
+          <input type="checkbox" id="uppercase" checked>
+          <span class="checkmark"></span>
+          Заглавные буквы (A-Z)
+        </label>
+      </div>
+      <div class="setting">
+        <label for="numbers" class="checkbox-label">
+          <input type="checkbox" id="numbers" checked>
+          <span class="checkmark"></span>
+          Цифры (0-9)
+        </label>
+      </div>
+      <div class="setting">
+        <label for="symbols" class="checkbox-label">
+          <input type="checkbox" id="symbols" checked>
+          <span class="checkmark"></span>
+          Спецсимволы (!@#$%^&*)
+        </label>
+      </div>
+
+      <!-- Кнопка генерации -->
+      <button id="generate" class="generate-button">Сгенерировать пароль</button>
+
+      <!-- Поле с паролем -->
+      <div id="password-output" class="password-output">Нажмите "Сгенерировать"</div>
+
+      <!-- Кнопка сохранения настроек -->
+      <button id="save-settings" class="save-button">Сохранить настройки</button>
+    </div>
+
+    <!-- Вкладка истории -->
+    <div id="history-tab" class="tab-content">
+      <h1>История паролей</h1>
+      <div id="history-list" class="history-list">
+        <!-- Здесь будут отображаться пароли -->
+      </div>
+      <button id="clear-history" class="clear-button">Очистить историю</button>
+    </div>
+
+    <!-- Блок для уведомлений -->
+    <div id="notification" class="notification"></div>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
